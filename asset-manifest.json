@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/DevJobs-App-project/static/css/main.b5d7c3c9.css",
+    "main.js": "/DevJobs-App-project/static/js/main.94767a10.js",
+    "static/js/787.9149cf08.chunk.js": "/DevJobs-App-project/static/js/787.9149cf08.chunk.js",
+    "static/media/icon-sun.svg": "/DevJobs-App-project/static/media/icon-sun.9422c1533b01125b8456.svg",
+    "static/media/bg-pattern-header.svg": "/DevJobs-App-project/static/media/bg-pattern-header.f3307602ee5e7c6b4f50.svg",
+    "index.html": "/DevJobs-App-project/index.html",
+    "static/media/icon-moon.svg": "/DevJobs-App-project/static/media/icon-moon.038e80ca9ba2097f6257.svg",
+    "main.b5d7c3c9.css.map": "/DevJobs-App-project/static/css/main.b5d7c3c9.css.map",
+    "main.94767a10.js.map": "/DevJobs-App-project/static/js/main.94767a10.js.map",
+    "787.9149cf08.chunk.js.map": "/DevJobs-App-project/static/js/787.9149cf08.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5d7c3c9.css",
+    "static/js/main.94767a10.js"
+  ]
+}
