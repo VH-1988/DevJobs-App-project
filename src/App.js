@@ -26,9 +26,9 @@ function App() {
           <div className="dark-mode"></div>
         </div>        
         <Routes>
-          <Route path='/DevJobs-App-project/' element={<Navigate to='/DevJobs-App-project/jobs'/>} />
-          <Route path='/DevJobs-App-project/jobs' element={<JobLists/>} />
-          <Route path='/jobs/:position' element={<JobDetails/>} />
+          <Route path='/DevJobs-App-project/' element={<Navigate to='/DevJobs-App-project/jobs/'/>} />
+          <Route path='/DevJobs-App-project/jobs/' element={<JobLists/>} />
+          <Route path='/jobs/:position/' element={<JobDetails/>} />
         </Routes>        
       </div>
     </ThemeContext.Provider>

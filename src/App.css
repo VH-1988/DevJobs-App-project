@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 #light{
-  background: #f4f6f8;
-  height: 1700px;
+  background: #F2F2F2;
+  height: 2000px;
 }
 #dark{
   background-color: #121721;
@@ -9,14 +9,18 @@
 }
 #light .job-list-wrapper,
 #light .job-wrapper,
-#light .job-item{
-  background: #f4f6f8;
+#light .job-item,
+#light .details-top{
+  background: #ffffff;
 }
 #dark .job-list-wrapper,
 #dark .job-item,
 #dark .details-top,
 #dark .job-details{
   background: #19202D;
+}
+#light .job-wrapper{
+  background: #F2F2F2;
 }
 #dark .job-wrapper{
   background: #121721;
@@ -61,18 +65,26 @@ h1, h2{
   font-weight: 500;
   color: #19202D;
 }
+.MdSearch-btn{
+  opacity: 0;
+}
 .btn{
-  background: #5964e0;
-  padding: 7px 25px;
+  background: #5964e0; 
   border: none;
   outline: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
   border-radius: 5px;
   width: 123px;
   height: 48px;
   cursor: pointer;
+}
+.btn::after{
+  top: 15px;
+  left: 35.5px;
+  position: absolute;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  content: 'Search';
 }
 .btn:hover{
   background: #939bf4;
@@ -201,6 +213,11 @@ input:checked + .slider::before{
   align-items: center;
   justify-content: space-between;
 }
+.pop-up{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .search-panel-01, .search-panel-02{
   display: flex;
   align-items: center;
@@ -265,7 +282,7 @@ input:checked + .slider::before{
   position: absolute;
   display: flex;
   align-items: center;
-  right: 14.86%;
+  right: 17%;
 }
 .search-panel-03 input{
   width: 24px;
@@ -273,7 +290,7 @@ input:checked + .slider::before{
   border-radius: 3px;
   cursor: pointer;
 }
-.search-panel-03 label{
+.checkbox-label{
   margin-left: 15px;
   font-size: 15px;
   font-weight: 700;
@@ -284,6 +301,7 @@ input:checked + .slider::before{
 }
 .search-panel-04{
   position: absolute;
+  top: 15px;
   right: 16px;
 }
 .job-wrapper{
@@ -296,10 +314,11 @@ input:checked + .slider::before{
   right: 11.45%;
 }
 .job-item{
-  width: 31%;
+  width: 31.5%;
   height: 228px;
   margin-bottom: 65px;
   padding-left: 30px;
+  padding-right: 30px;
   border-radius: 6px;
 }
 .job-item img{
@@ -473,4 +492,178 @@ input:checked + .slider::before{
 }
 .search-panel-03 input{
   accent-color: #5964E0;
+}
+@media only screen and (max-width: 1200px) {
+    .job-list-wrapper, .job-wrapper{
+      left: 10%;
+      right: 10%;
+    }
+    .container h1{
+      left: 10%;
+    }
+    .dark-light-mode{
+      right: 8.5%;
+    }
+    .search-panel-03{
+      right: 18%;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .job-list-wrapper, .job-wrapper{
+      left: 5.21%;
+      right: 5.21%;
+    }
+    .job-item{
+      width: 49.2%;
+    }
+    .container h1{
+      left: 5.21%;
+    }
+    .dark-light-mode{
+      right: 3.8%;
+    }
+    .search-panel-01{
+      left: 9.28%;
+      width: 15.23%;
+    }
+    .MdLocationOn{
+      left: 35.71%;
+    }
+    .search-panel-02{
+      left: 40.79%;
+      width: 19.59%;
+    }
+    .search-panel-03{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      right: 17%;
+    }
+    .checkbox-label{
+      visibility: hidden;
+    }
+    .checkbox-label::after{
+      visibility: visible;
+      content: 'Full Time';
+      position: absolute;
+      top: 4px;
+      left: 28px;
+      font-size: 15px;
+      font-weight: 700;
+      height: 16px;
+      width: 108px;  
+      display: flex;
+      align-items: center;
+      width: 68px;      
+    }
+    #light{
+      height: 3000px;
+    }
+    #dark{
+      height: 3000px;
+    }
+}
+@media only screen and (max-width: 650px){
+  .header{
+    height: 135px;
+    border-radius: 0;
+  }
+  .container h1{
+    margin-top: 32px;
+  }
+  .dark-light-mode{
+    top: 35px;
+  }
+  .job-item{
+    width: 100%;
+  }
+  .MdSearch{
+    visibility: hidden;
+  }
+  .btn::after{
+    content: none;
+  }
+  .btn{
+    width: 48px;
+    height: 48px;    
+  }
+  .search-panel-04{
+    top: 16px;
+  }
+  .MdSearch-btn{
+    position: absolute;
+    height: 19.5px;
+    width: 19.5px;
+    top: 14px;
+    left: 14px;
+    opacity: 1;
+    color: #ffffff;
+  }
+  .search-panel-01{
+    left: 7.33%;
+    width: 15.23%;
+  }
+  #light{
+    height: 5000px;
+  }
+  #dark{
+    height: 5000px;
+  }
+  .pop-up{
+    z-index: 1;
+    position: absolute;
+    top: 129px;
+    width: 100%;
+    height: 217px;
+    border-radius: 6px;
+    /*right: -150;*/
+  }
+  #light .pop-up{
+    background: #ffffff;
+  }
+  #dark .pop-up{
+    background: #19202D;
+  }
+  .MdLocationOn{
+    position: absolute;
+    height: 25px;
+    width: 17px;
+    left: 24px;
+    top: 24px;
+  }
+  .search-panel-02{
+    position: absolute;
+    top: 27px;
+    left: 57px;
+  }
+  .search-panel-03{
+    top: 97px;
+    left: 24px;
+  }
+  .checkbox-label{
+    visibility: visible;
+  }
+  .checkbox-label::after{
+    visibility: hidden;
+  }
+  .btn-pop-up{
+    position: absolute;
+    background: #5964e0; 
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    bottom: 24px;
+    width: 279px;
+    height: 48px;
+    cursor: pointer;
+  }
+  .btn-pop-up::after{
+    content: 'Search';
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #ffffff;
+  }
 }
