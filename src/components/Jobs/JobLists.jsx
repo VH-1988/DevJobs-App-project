@@ -49,12 +49,11 @@ const JobLists = () => {
     </div>
         <div className="job-wrapper">
             {jobData?.filter((job) => {
-                if(searchByTitle === '') return job;
-                if(
-                    job.position.toLowerCase().includes(searchByCompany) || 
-                    job.company.toLowerCase().includes(searchByCompany)
-                    )
-                return job;
+                if (searchByTitle === '')
+                    return job;
+                if (job.position.toLowerCase().includes(searchByCompany) ||
+                    job.company.toLowerCase().includes(searchByCompany))
+                    return job;
             })
             .map((item) => (
                 <div className="job-item" key={item.id}>
