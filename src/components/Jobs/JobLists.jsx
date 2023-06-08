@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdSearch, MdLocationOn } from "react-icons/md";
+import { MdSearch, MdLocationOn,MdFilterAlt } from "react-icons/md";
 import jobs from '../../data.json';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
@@ -25,6 +25,20 @@ const JobLists = () => {
         }
     };
   return <section className='job-List'>
+    <div className="pop-up-bg">
+                <div className='pop-up'>
+                    <span className='MdLocationOn'><MdLocationOn/></span>
+                    <div className="search-panel-02">
+                        <input type="text" placeholder='Filter by location...' value={searchByLocation} onChange={e=> setSearchByLocation(e.target.value)}/>
+                    </div>
+                    <button className='btn-pop-up' onClick={locationSearchHandler}></button>
+                    
+                    <div className="search-panel-03">
+                        <input id='checkbox-1' type="checkbox" value="full-time" onClick={filterJobData} />
+                        <label htmlFor='checkbox-01' className='checkbox-label'>Full Time Only</label>
+                    </div>
+                </div>
+            </div>
     <div className="job-list-wrapper">
         <div className="search-panel">
 
@@ -32,28 +46,20 @@ const JobLists = () => {
             <div className="search-panel-01">                
                 <input type="text" placeholder='Filter by title, companies, expertise...' value={searchByTitle} onChange={e=> setSearchByTitle(e.target.value)}/>
             </div>
-
-            <span className='MdLocationOn'><MdLocationOn/></span>
-            <div className="search-panel-02">
-                <input type="text" placeholder='Filter by location...' value={searchByLocation} onChange={e=> setSearchByLocation(e.target.value)}/>
-            </div>
-
-            <div className="search-panel-03">
-                <input id='checkbox-1' type="checkbox" value="full-time" onClick={filterJobData} />
-                <label htmlFor='checkbox-01' className='checkbox-label'>Full Time Only</label>
-            </div>
+            <button className='cone-pop-up'><MdFilterAlt/></button>
             <div className="search-panel-04">
-                <button className='btn' onClick={locationSearchHandler}>Search</button>
+                <button className='btn' onClick={locationSearchHandler}><span className='MdSearch-btn'><MdSearch/></span></button>
             </div>
         </div>
     </div>
         <div className="job-wrapper">
             {jobData?.filter((job) => {
-                if (searchByTitle === '')
-                    return job;
-                if (job.position.toLowerCase().includes(searchByCompany) ||
-                    job.company.toLowerCase().includes(searchByCompany))
-                    return job;
+                if(searchByTitle === '') return job;
+                if(
+                    job.position.toLowerCase().includes(searchByCompany) || 
+                    job.company.toLowerCase().includes(searchByCompany)
+                    )
+                return job;
             })
             .map((item) => (
                 <div className="job-item" key={item.id}>
