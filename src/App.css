@@ -60,6 +60,9 @@
 body{
   font-family: 'Kumbh Sans', sans-serif;
 }
+body.active-popup{
+  overflow-y: hidden;
+}
 h1, h2{
   font-size: 1.3em;
   font-weight: 500;
@@ -499,6 +502,9 @@ input:checked + .slider::before{
 .cone-pop-up{
   visibility: hidden;
 }
+.close-pop-up{
+  position: absolute;
+}
 @media only screen and (max-width: 1200px) {
     .job-list-wrapper, .job-wrapper{
       left: 10%;
@@ -578,6 +584,12 @@ input:checked + .slider::before{
     }
 }
 @media only screen and (max-width: 650px){
+  .hide-650{
+    visibility: hidden;
+  }
+  .uno{
+    visibility: visible;
+  }
   .details-wrapper{
     left: 5%;
     right: 5%;
@@ -627,8 +639,13 @@ input:checked + .slider::before{
   #dark{
     height: 5000px;
   }
+  .popup-all{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
   .pop-up{
-    z-index: 1;
+    z-index: 5;
     position: absolute;
     top: 225px;
     width: 327px;
@@ -656,9 +673,6 @@ input:checked + .slider::before{
   .search-panel-03{
     top: 97px;
     left: 24px;
-  }
-  .checkbox-label{
-    visibility: visible;
   }
   .checkbox-label::after{
     visibility: hidden;
@@ -694,9 +708,6 @@ input:checked + .slider::before{
     background: rgb(0, 0, 0, 0.7);
     height: 100%;
     width: 100%;
-  }
-  .pop-up, .btn-pop-up, .pop-up-bg, .search-panel-03 label{
-    visibility: hidden;
   }
   .cone-pop-up{
     position: absolute;

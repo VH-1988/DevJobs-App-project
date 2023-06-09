@@ -9,6 +9,16 @@ const JobLists = () => {
     const [searchByTitle, setSearchByTitle] = useState('');
     const searchByCompany = searchByTitle.toLowerCase();
     const [searchByLocation, setSearchByLocation] =useState('');
+    const [popup, setPopup] = useState(false);
+
+    const togglePopup = () => {
+        setPopup(!popup)
+    };
+    if(popup){
+        document.body.classList.add('active-popup')
+    } else {
+        document.body.classList.remove('active-popup')
+    }
 
     //_____filter by Location_____
     const locationSearchHandler = () => {
@@ -25,20 +35,26 @@ const JobLists = () => {
         }
     };
   return <section className='job-List'>
-    <div className="pop-up-bg">
-                <div className='pop-up'>
-                    <span className='MdLocationOn'><MdLocationOn/></span>
-                    <div className="search-panel-02">
-                        <input type="text" placeholder='Filter by location...' value={searchByLocation} onChange={e=> setSearchByLocation(e.target.value)}/>
-                    </div>
-                    <button className='btn-pop-up' onClick={locationSearchHandler}></button>
-                    
-                    <div className="search-panel-03">
-                        <input id='checkbox-1' type="checkbox" value="full-time" onClick={filterJobData} />
-                        <label htmlFor='checkbox-01' className='checkbox-label'>Full Time Only</label>
-                    </div>
+    {popup && (
+        <div className='popup-all'>
+
+        <div className="pop-up-bg hide-overall" onClick={togglePopup}>
+        </div>
+            <div className='pop-up hide-overall'>
+                <span className='MdLocationOn'><MdLocationOn/></span>
+                <div className="search-panel-02 hide-overall">
+                    <input type="text" placeholder='Filter by location...' value={searchByLocation} onChange={e=> setSearchByLocation(e.target.value)}/>
+                </div>
+                <button className='btn-pop-up hide-overall' onClick={locationSearchHandler}></button>
+                
+                <div className="search-panel-03 hide-overall">
+                    <input id='checkbox-1' type="checkbox" value="full-time" onClick={filterJobData} />
+                    <label htmlFor='checkbox-01' className='checkbox-label hide-overall uno'>Full Time Only</label>
                 </div>
             </div>
+        </div>
+    )}
+            
     <div className="job-list-wrapper">
         <div className="search-panel">
 
@@ -46,7 +62,15 @@ const JobLists = () => {
             <div className="search-panel-01">                
                 <input type="text" placeholder='Filter by title, companies, expertise...' value={searchByTitle} onChange={e=> setSearchByTitle(e.target.value)}/>
             </div>
-            <button className='cone-pop-up'><MdFilterAlt/></button>
+            <span className='MdLocationOn hide-650'><MdLocationOn/></span>
+                    <div className="search-panel-02 hide-650">
+                        <input type="text" placeholder='Filter by location...' value={searchByLocation} onChange={e=> setSearchByLocation(e.target.value)}/>
+                    </div>
+                    <div className="search-panel-03 hide-650">
+                        <input id='checkbox-1' type="checkbox" value="full-time" onClick={filterJobData} />
+                        <label htmlFor='checkbox-01' className='checkbox-label hide-650'>Full Time Only</label>
+                    </div>
+            <button className='cone-pop-up' onClick={togglePopup}><MdFilterAlt/></button>
             <div className="search-panel-04">
                 <button className='btn' onClick={locationSearchHandler}><span className='MdSearch-btn'><MdSearch/></span></button>
             </div>
